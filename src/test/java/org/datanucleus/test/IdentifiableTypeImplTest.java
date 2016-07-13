@@ -29,7 +29,7 @@ public class IdentifiableTypeImplTest {
             
             em.getMetamodel().getEntities()
               .forEach(e -> assertNotNull("@Id attribute must not be null", 
-                  e.getDeclaredId(e.getIdType().getClass())));
+                  e.getDeclaredId(e.getIdType().getJavaType())));
 
             tx.commit();
         }
